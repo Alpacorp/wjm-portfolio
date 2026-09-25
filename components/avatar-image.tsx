@@ -45,9 +45,6 @@ export function AvatarImage() {
             alt="Wendy Jimenez Montero"
             fill
             className="object-contain z-10"
-            style={{
-              imageRendering: "high-quality",
-            }}
             priority
             quality={100}
           />

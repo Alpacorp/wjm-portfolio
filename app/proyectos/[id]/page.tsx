@@ -190,14 +190,14 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
               <h2 className="text-2xl font-bold text-white mb-6">Descripción del Proyecto</h2>
               <p className="text-gray-300 mb-6">{project.fullDescription}</p>
 
-              {project.cms && (
+              {"cms" in project && project.cms && (
                 <>
                   <h3 className="text-xl font-bold text-white mb-2">CMS</h3>
                   <p className="text-gray-300 mb-4">{project.cms}</p>
                 </>
               )}
 
-              {project.rol && (
+              {"rol" in project && project.rol && (
                 <>
                   <h3 className="text-xl font-bold text-white mb-2">Rol</h3>
                   <p className="text-gray-300 mb-6">{project.rol}</p>
