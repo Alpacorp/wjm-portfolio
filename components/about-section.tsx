@@ -26,7 +26,7 @@ export function AboutSection() {
               Sobre Mí
             </h2>
             <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Estratega SEO y Marketing Digital con más de 2 años de experiencia en la optimización de sitios web y el
+              Estratega SEO con más de 4 años de experiencia en la optimización de sitios web y el
               diseño de estrategias digitales enfocadas en el posicionamiento orgánico y el aumento de tráfico.
             </p>
           </div>

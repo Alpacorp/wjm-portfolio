@@ -27,10 +27,10 @@ export function HeroSection() {
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-gradient-to-r from-white to-teal-400 text-transparent bg-clip-text">
                 Hola, soy Wendy Jiménez
               </h1>
-              <p className="text-xl text-teal-400">Estratega SEO y Marketing Digital</p>
+              <p className="text-xl text-teal-400">Estratega SEO</p>
               <p className="text-gray-400 max-w-[600px] mt-4">
-                Especialista en posicionamiento orgánico, optimización web y estrategias digitales que generan
-                resultados medibles y escalables para tu negocio.
+                Más de 4 años de experiencia en posicionamiento orgánico, optimización web y estrategias digitales que
+                generan resultados medibles y escalables para tu negocio.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
