@@ -32,7 +32,7 @@ export function ContactSection() {
           </div>
         </motion.div>
 
-        <div className="mx-auto max-w-3xl mt-12">
+        <div className="mx-auto max-w-5xl mt-12">
           <motion.div
             className="bg-black/40 backdrop-blur-sm border border-indigo-500/20 rounded-lg p-8"
             initial={{ opacity: 0, y: 20 }}

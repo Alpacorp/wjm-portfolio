@@ -32,7 +32,7 @@ export function AboutSection() {
           </div>
         </motion.div>
 
-        <div className="mx-auto max-w-4xl py-12">
+        <div className="mx-auto max-w-5xl py-12">
           <motion.div
             className="bg-black/40 backdrop-blur-sm border border-teal-500/20 rounded-lg p-8"
             initial={{ opacity: 0, y: 20 }}
