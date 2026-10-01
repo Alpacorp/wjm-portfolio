@@ -24,8 +24,8 @@ export type NavItem = {
 const allNavItems: NavItem[] = [
   { href: "#enfoque", label: "Enfoque" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "#seo-lab", label: "SEO Lab", pending: true },
-  { href: "#sobre-mi", label: "Sobre mí", pending: true },
+  { href: "#seo-lab", label: "SEO Lab" },
+  { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#formacion", label: "Formación" },
   { href: "#contacto", label: "Contacto" },
 ]
