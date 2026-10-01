@@ -49,14 +49,12 @@ export const profile = {
     src: "/images/wendy-jimenez.png",
     alt: "Wendy Jiménez Montero",
     /**
-     * Retrato de estudio vertical (411x575) con fondo gris claro, no
-     * transparente: por eso el hero lo recorta con object-cover y lo funde
-     * con el fondo mediante una viñeta, en lugar del object-contain que
-     * usaba el avatar recortado anterior (/images/avatar-hd.png, conservado).
+     * Recorte en PNG con transparencia real (1024x1536, RGBA). El alfa pasa
+     * de 0 a 253 en unos 20px, sin halo semitransparente, asi que la silueta
+     * se puede perfilar con drop-shadow.
      *
-     * PENDIENTE: una versión de mayor resolución. A 411px de ancho, el
-     * retrato se ve nítido en pantallas normales pero algo blando en
-     * pantallas Retina. Lo ideal sería 1200x1200 o superior.
+     * Sustituye al plano de estudio con fondo gris que habia antes, que sobre
+     * el fondo oscuro del sitio quedaba como un disco claro.
      */
   },
 } as const
