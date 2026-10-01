@@ -13,12 +13,22 @@ export const profile = {
   initials: "WJ",
   role: "Estratega SEO",
 
+  /** Firma corta del hero. */
+  tagline: "SEO & AEO",
+
   /** Indicado por la propia Wendy (2026-09-30). No modificar sin confirmación. */
   experience: "Más de 4 años de experiencia",
 
-  /** Descripción corta, heredada del contenido actual del sitio. */
+  /**
+   * Entradilla del hero, escrita por Wendy.
+   * Sustituye a la anterior ("Especialista en posicionamiento orgánico,
+   * optimización web y estrategias digitales...").
+   */
   summary:
-    "Especialista en posicionamiento orgánico, optimización web y estrategias digitales enfocadas en el aumento de tráfico cualificado.",
+    "Trabajo para que las marcas puedan ser encontradas, entendidas y elegidas en un ecosistema de búsqueda donde Google, los contenidos, los datos y la inteligencia artificial forman parte del proceso de descubrimiento y decisión.",
+
+  /** Franja de disciplinas bajo el hero. */
+  pillars: ["Technical SEO", "On-Page", "Analytics", "AEO / AI Search"],
 
   /** Estado de búsqueda laboral: es el objetivo principal del sitio. */
   availability: "Abierta a nuevas oportunidades y equipos",

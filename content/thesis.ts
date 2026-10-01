@@ -46,3 +46,20 @@ export const thesis = {
    */
   disclaimer: "Formulación propia para explicar mi enfoque, no una definición del sector.",
 } as const
+
+/**
+ * Estados que rodean al retrato del hero.
+ *
+ * Recorren el camino de un contenido por el ecosistema de búsqueda:
+ * entra (SEARCH), se rastrea e indexa (etapa SEO, turquesa) y termina
+ * siendo mencionado y citado por sistemas de IA (etapa AEO, violeta).
+ * Es la tesis SEO -> AEO contada con el lenguaje de un log de rastreo.
+ */
+export const searchPipeline = [
+  { label: "Search", stage: "entry" as const },
+  { label: "Crawled", stage: "seo" as const },
+  { label: "Indexable", stage: "seo" as const },
+  { label: "200 OK", stage: "status" as const },
+  { label: "Mentioned", stage: "aeo" as const },
+  { label: "Cited", stage: "aeo" as const },
+] as const
