@@ -25,7 +25,7 @@ export const profile = {
    * optimización web y estrategias digitales...").
    */
   summary:
-    "Trabajo para que las marcas puedan ser encontradas, entendidas y elegidas en un ecosistema de búsqueda donde Google, los contenidos, los datos y la inteligencia artificial forman parte del proceso de descubrimiento y decisión.",
+    "Trabajo para que las marcas sean encontradas, entendidas y elegidas en un ecosistema de búsqueda donde Google, los contenidos, los datos y la inteligencia artificial forman parte del proceso de descubrimiento y decisión.",
 
   /** Franja de disciplinas bajo el hero. */
   pillars: ["Technical SEO", "On-Page", "Analytics", "AEO / AI Search"],
@@ -46,8 +46,18 @@ export const profile = {
   },
 
   avatar: {
-    src: "/images/avatar-hd.png",
+    src: "/images/wendy-jimenez.png",
     alt: "Wendy Jiménez Montero",
+    /**
+     * Retrato de estudio vertical (411x575) con fondo gris claro, no
+     * transparente: por eso el hero lo recorta con object-cover y lo funde
+     * con el fondo mediante una viñeta, en lugar del object-contain que
+     * usaba el avatar recortado anterior (/images/avatar-hd.png, conservado).
+     *
+     * PENDIENTE: una versión de mayor resolución. A 411px de ancho, el
+     * retrato se ve nítido en pantallas normales pero algo blando en
+     * pantallas Retina. Lo ideal sería 1200x1200 o superior.
+     */
   },
 } as const
 

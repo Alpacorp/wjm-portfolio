@@ -58,8 +58,11 @@ export const thesis = {
 export const searchPipeline = [
   { label: "Search", stage: "entry" as const },
   { label: "Crawled", stage: "seo" as const },
-  { label: "Indexable", stage: "seo" as const },
-  { label: "200 OK", stage: "status" as const },
+  // De las dos opciones que diste (Indexable / Indexed) se usa "Indexed":
+  // es el estado real que reporta Search Console y mantiene la serie en
+  // participio, igual que Crawled, Mentioned y Cited.
+  { label: "Indexed", stage: "seo" as const },
   { label: "Mentioned", stage: "aeo" as const },
   { label: "Cited", stage: "aeo" as const },
+  { label: "200 OK", stage: "status" as const },
 ] as const
