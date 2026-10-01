@@ -2,85 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  /*
+   * Tokens de marca. El sitio es dark-only (ThemeProvider fuerza `dark`),
+   * por eso :root y .dark comparten los mismos valores: así no hay destello
+   * claro antes de que React hidrate.
+   *
+   * Los tokens de shadcn (--background, --card, --accent...) se mapean a la
+   * paleta de marca para que Button/Badge/Card hereden el look sin tocarlos.
+   */
+  :root,
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Fondos */
+    --background: 210 50% 2.4%; /* #030609 */
+    --background-alt: 210 50% 3.9%; /* #050A0F */
+
+    /* Superficies */
+    --card: 195 46% 5.1%; /* #071013 */
+    --card-foreground: 200 18% 97%;
+    --popover: 215 44% 7.6%; /* #0B121C */
+    --popover-foreground: 200 18% 97%;
+
+    /* Texto */
+    --foreground: 200 18% 97%; /* #F5F7F8 */
+    --muted: 215 44% 7.6%;
+    --muted-foreground: 203 12% 65%; /* #9CA9B1 */
+
+    /* Acentos de marca */
+    --brand: 174 75% 52%; /* turquesa #28E0CF */
+    --brand-soft: 174 100% 78%; /* #91FFF4 */
+    --brand-alt: 243 88% 70%; /* violeta #7771F6 */
+    --brand-alt-soft: 245 100% 87%; /* #C3BEFF */
+
+    /* Primario = turquesa, con texto oscuro encima para contraste */
+    --primary: 174 75% 52%;
+    --primary-foreground: 210 50% 2.4%;
+
+    --secondary: 215 44% 7.6%;
+    --secondary-foreground: 200 18% 97%;
+
+    /* `accent` es el hover de los botones ghost/outline de shadcn:
+       una superficie sutil, no el turquesa de marca. */
+    --accent: 215 44% 7.6%;
+    --accent-foreground: 200 18% 97%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 200 18% 97%;
+
+    /* Líneas neutras por defecto; los bordes de marca se aplican en los
+       componentes con border-aqua/10 o border-iris/10. */
+    --border: 200 28% 11%;
+    --input: 200 28% 11%;
+    --ring: 174 75% 52%;
+
+    --radius: 0.5rem;
   }
 }
 
@@ -88,7 +63,69 @@ body {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-ink text-fg antialiased;
+    font-synthesis-weight: none;
+  }
+
+  ::selection {
+    @apply bg-aqua/25 text-fg;
+  }
+
+  /* Anclas de sección: compensa la navbar sticky de 4rem */
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /*
+   * Profundidad ambiental: un único halo radial muy tenue por sección.
+   * Sustituye los `blur-[100px]` saturados del diseño anterior.
+   */
+  .ambient-aqua {
+    background-image: radial-gradient(
+      60rem 30rem at 15% 0%,
+      hsl(var(--brand) / 0.055),
+      transparent 70%
+    );
+  }
+
+  .ambient-iris {
+    background-image: radial-gradient(
+      60rem 30rem at 85% 0%,
+      hsl(var(--brand-alt) / 0.05),
+      transparent 70%
+    );
+  }
+
+  /* Línea divisoria que se desvanece hacia los extremos */
+  .rule-fade {
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--brand) / 0.18) 25%,
+      hsl(var(--brand-alt) / 0.14) 75%,
+      transparent
+    );
   }
 }

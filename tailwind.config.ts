@@ -19,7 +19,33 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
       colors: {
+        // Paleta de marca. Nombres propios (aqua/iris/ink/surface/fg) para no
+        // colisionar con los tokens de shadcn (accent, primary, border...).
+        ink: {
+          DEFAULT: "#030609",
+          alt: "#050A0F",
+        },
+        surface: {
+          DEFAULT: "#071013",
+          raised: "#0B121C",
+        },
+        aqua: {
+          DEFAULT: "#28E0CF",
+          soft: "#91FFF4",
+        },
+        iris: {
+          DEFAULT: "#7771F6",
+          soft: "#C3BEFF",
+        },
+        fg: {
+          DEFAULT: "#F5F7F8",
+          muted: "#9CA9B1",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
