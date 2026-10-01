@@ -11,7 +11,12 @@
 export const profile = {
   name: "Wendy Jiménez",
   initials: "WJ",
-  role: "Estratega SEO",
+  /*
+   * No se usa "Estratega SEO" como etiqueta publica: el posicionamiento del
+   * sitio es "SEO & AEO" (ver `tagline`). Se conserva el campo porque
+   * describe el rol de forma neutra para usos internos.
+   */
+  role: "SEO y AEO",
 
   /** Firma corta del hero. */
   tagline: "SEO & AEO",

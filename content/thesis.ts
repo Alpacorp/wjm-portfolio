@@ -48,21 +48,27 @@ export const thesis = {
 } as const
 
 /**
- * Estados que rodean al retrato del hero.
+ * Etiquetas técnicas que rodean al retrato del hero.
  *
- * Recorren el camino de un contenido por el ecosistema de búsqueda:
- * entra (SEARCH), se rastrea e indexa (etapa SEO, turquesa) y termina
- * siendo mencionado y citado por sistemas de IA (etapa AEO, violeta).
- * Es la tesis SEO -> AEO contada con el lenguaje de un log de rastreo.
+ * NO son un proceso secuencial y no deben conectarse con flechas: son
+ * conceptos sueltos de dos familias.
+ *
+ * - Crawled, Indexed y 200 OK pertenecen al SEO técnico (turquesa).
+ * - Mentioned, Cited y Sentiment introducen la visibilidad en AI Search /
+ *   AEO: menciones, citas y sentimiento son parte de las métricas con las
+ *   que se analiza la presencia en LLMs (violeta).
+ * - Search queda como término paraguas, en gris.
+ *
+ * Se mantienen en inglés a propósito: es la terminología habitual del
+ * sector, no un indicio de que el sitio sea bilingüe.
  */
-export const searchPipeline = [
-  { label: "Search", stage: "entry" as const },
-  { label: "Crawled", stage: "seo" as const },
-  // De las dos opciones que diste (Indexable / Indexed) se usa "Indexed":
-  // es el estado real que reporta Search Console y mantiene la serie en
-  // participio, igual que Crawled, Mentioned y Cited.
-  { label: "Indexed", stage: "seo" as const },
-  { label: "Mentioned", stage: "aeo" as const },
-  { label: "Cited", stage: "aeo" as const },
-  { label: "200 OK", stage: "status" as const },
+export const searchSignals = [
+  { label: "Search", family: "umbrella" as const },
+  { label: "Crawled", family: "seo" as const },
+  { label: "Indexed", family: "seo" as const },
+  { label: "200 OK", family: "status" as const },
+  { label: "Mentioned", family: "aeo" as const },
+  { label: "Cited", family: "aeo" as const },
+  // Pedida "de manera sutil": se pinta mas atenuada que el resto.
+  { label: "Sentiment", family: "aeo" as const, subtle: true },
 ] as const

@@ -24,9 +24,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: `${profile.name} | ${profile.role}`,
+  title: `${profile.name} | ${profile.tagline}`,
   description:
-    "Portafolio de Wendy Jiménez, estratega SEO: Technical SEO, On-Page, Analytics y AEO / AI Search.",
+    "Portafolio de Wendy Jiménez, SEO & AEO: Technical SEO, On-Page, Analytics y AI Search.",
   authors: [{ name: profile.name }],
   robots: { index: true, follow: true },
 }

@@ -24,8 +24,10 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-ink/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-5 md:px-6">
+        {/* El logotipo sustituye al enlace "Inicio" del menu, de ahi el aria-label. */}
         <Link
           href="/"
+          aria-label="Ir al inicio"
           className="font-mono text-sm font-medium tracking-[0.2em] text-fg transition-colors hover:text-aqua"
         >
           {profile.initials}

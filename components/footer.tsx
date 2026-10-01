@@ -14,13 +14,14 @@ export function Footer() {
           <div className="flex flex-col gap-3">
             <Link
               href="/"
+              aria-label="Ir al inicio"
               className="font-mono text-sm font-medium tracking-[0.2em] text-fg transition-colors hover:text-aqua"
             >
               {profile.initials}
               <span className="text-aqua">.</span>
             </Link>
             <p className="max-w-xs text-pretty text-sm leading-relaxed text-fg-muted">
-              {profile.name} — {profile.role}. {profile.availability}.
+              {profile.name} — {profile.tagline}. {profile.availability}.
             </p>
           </div>
 
