@@ -2,7 +2,6 @@ import Image from "next/image"
 
 import { profile } from "@/content/profile"
 import { searchPipeline } from "@/content/thesis"
-import { Reveal } from "@/components/primitives/reveal"
 import { cn } from "@/lib/utils"
 
 /**
@@ -89,16 +88,22 @@ export function HeroPortrait() {
         <div aria-hidden className="absolute inset-0" style={{ backgroundImage: PORTRAIT_VIGNETTE }} />
       </div>
 
-      {/* Estados */}
+      {/*
+        Estados.
+        Entran escalonados con una animación CSS, no con <Reveal>: así no
+        dependen de la hidratación de React y el hero no necesita JS de
+        cliente. El contenido se pinta visible desde el primer frame; esto
+        es solo decoración.
+      */}
       {searchPipeline.map((state, index) => (
-        <Reveal
-          key={state.label}
-          delay={0.3 + index * 0.08}
-          className={cn("absolute z-10", POSITIONS[index])}
-        >
+        // El posicionamiento va en el contenedor y la animación dentro: la
+        // animación termina en `transform: none`, que anularía el
+        // -translate-x-1/2 con el que se centra el chip de 200 OK.
+        <span key={state.label} className={cn("absolute z-10", POSITIONS[index])}>
           <span
+            style={{ animationDelay: `${(0.15 + index * 0.08).toFixed(2)}s` }}
             className={cn(
-              "flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1",
+              "reveal-css flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1",
               "font-mono text-[0.625rem] uppercase tracking-[0.12em] sm:text-[0.6875rem]",
               STAGE_STYLES[state.stage],
             )}
@@ -108,7 +113,7 @@ export function HeroPortrait() {
             )}
             {state.label}
           </span>
-        </Reveal>
+        </span>
       ))}
     </div>
   )

@@ -89,7 +89,34 @@
   }
 }
 
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @layer utilities {
+  /*
+   * Entrada puramente CSS, para elementos que están sobre la línea de
+   * flotación. A diferencia del componente <Reveal>, no espera a que React
+   * hidrate: arranca en cuanto el navegador pinta. Se reserva para
+   * decoración; el contenido del hero se pinta visible sin animación.
+   */
+  .reveal-css {
+    animation: reveal-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-css {
+      animation: none;
+    }
+  }
+
   .text-balance {
     text-wrap: balance;
   }
